@@ -2,8 +2,11 @@
 """
 Created on Mon Mar  2 12:07:28 2020
 
-@author: ciara
+@author: ciaran
 """
+
+# This script uses various methods to find the least squares solutions to
+# systems of linear equations.
 
 import numpy as np
 from scipy import linalg

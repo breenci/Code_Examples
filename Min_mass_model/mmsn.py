@@ -6,10 +6,19 @@ Created on Fri Nov 15 14:42:41 2019
 @author: ciaran
 """
 
+# The minimum mass solar nebula model (MMSN) is a method of approximating the 
+# minimum mass of solar nebula material required to form the planets.
+#
+# Details of the model can be found at http://articles.adsabs.harvard.edu/pdf/1977Ap%26SS..51..153W
+#
+# This script uses MMSN to find a lower bound of mass for the solar nebula and
+# to estimate its surface density profile.
+
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.integrate import quad
 from matplotlib.ticker import ScalarFormatter
+from uncertainties import ufloat
 
 #inputting data into arrays
 planet = np.array(['Mercury', 'Venus', 'Earth', 'Mars', 'Asteroids', 

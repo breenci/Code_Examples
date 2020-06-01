@@ -5,7 +5,17 @@ Created on Tue Feb 11 16:28:23 2020
 @author: ciaran
 """
 
-
+# This script solves the Poisson equation for a regular, square grid with a
+# single source charge using Dirichlet boundary conditions.
+#
+# The problem is cast as a system of linear equations and used to compare
+# convergence rates of various iterative methods.
+#
+# The methods studied are Gauss-Seidel, Jacobi, and Succesive-Over-Relaxation
+# (SOR) with the Liebmann method used as a check.
+#
+# Also find the optimal omega value for SOR convergence and associated max 
+# eigenvalues (lambda max)
 
 import numpy as np 
 from scipy import linalg 
