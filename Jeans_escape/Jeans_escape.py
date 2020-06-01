@@ -5,6 +5,17 @@ Created on Mon Mar  9 09:57:09 2020
 @author: ciaran
 """
 
+# Jeans escape is an atmospheric escape mechanism resulting from the thermal distribution of molecules
+# in the atmosphere. The flux of particles leaving the atmosphere via this mechanism is known as Jean's
+# flux.
+# 
+# This script calculates the jeans flux / particle number density in the case of the moon and Earth as a
+# function of atomic mass. 
+#
+# This essentially represents the fraction of exobase particles moving upward with a vertical 
+# greater than the escape velocity for a given mass 
+
+
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy import constants as con
@@ -33,8 +44,7 @@ def T_eq(T_star,R_star, d, A):
 
 #Function to calculate the jeans flux / particle number density
 #takes Temp in kelvin, molecular mass in amu, and escape velocity in m/s
-def jeans(T,m,v):
-    #V_0 defined according to equation in lecture notes
+def jeans(T, m, v):
     v_0 = np.sqrt((2*con.Boltzmann*T)/(m*con.atomic_mass))
     #define lambda
     lam = v**2/v_0**2
